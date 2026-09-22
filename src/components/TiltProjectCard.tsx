@@ -21,6 +21,7 @@ export const TiltProjectCard: React.FC<TiltProjectCardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isVertical = project.aspect === '9:16';
+  const embedUrl = project.embedUrl || (project.instagramUrl ? `${project.instagramUrl.split('?')[0].replace(/\/$/, '')}/embed/` : '');
 
   // 3D Tilt Motion Values
   const x = useMotionValue(0);
@@ -90,9 +91,8 @@ export const TiltProjectCard: React.FC<TiltProjectCardProps> = ({
           rotateX,
           rotateY,
           transformStyle: 'preserve-3d',
-          willChange: 'transform, opacity',
         }}
-        className="group relative rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 hover:border-[#00F0FF]/60 transition-colors duration-300 shadow-xl hover:shadow-[0_0_35px_rgba(0,240,255,0.22)] cursor-pointer flex flex-col transform-gpu select-none"
+        className="group relative rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 hover:border-[#00F0FF]/60 transition-colors duration-300 shadow-xl hover:shadow-[0_0_35px_rgba(0,240,255,0.22)] cursor-pointer flex flex-col will-change-transform transform-gpu select-none"
       >
         {/* Dynamic Specular Glare Layer */}
         <motion.div
@@ -109,17 +109,36 @@ export const TiltProjectCard: React.FC<TiltProjectCardProps> = ({
             isVertical ? 'aspect-[9/16]' : 'aspect-video'
           }`}
         >
-          {/* High-Performance Optimized Static Thumbnail Image */}
-          <img
-            src={project.posterUrl}
-            alt={project.title}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover z-[1] transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform"
-          />
+          {/* Sleek Dark-Slate Fallback Background with Glowing Spinner */}
+          <div className="absolute inset-0 bg-[#0d0d14] flex flex-col items-center justify-center gap-2.5 z-0 pointer-events-none">
+            <div className="w-8 h-8 rounded-full border-2 border-zinc-800 border-t-[#00F0FF] animate-spin shadow-[0_0_15px_rgba(0,240,255,0.4)]" />
+            <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+              Loading Reel
+            </span>
+          </div>
+
+          {/* Live Instagram Iframe Embed acting as visual thumbnail (Cropped UI) */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden bg-[#0d0d14] rounded-t-2xl">
+            <iframe
+              src={embedUrl}
+              title={`${project.title} Preview`}
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; encrypted-media"
+              style={{
+                transform: 'scale(1.35)',
+                transformOrigin: 'center center',
+                width: '100%',
+                height: '100%',
+                border: 'none',
+                pointerEvents: 'none',
+              }}
+              className="w-full h-full border-0 select-none block pointer-events-none"
+            />
+          </div>
 
           {/* Gradient Shadow Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/40 pointer-events-none z-[2]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none z-[2]" />
 
           {/* Top Badges */}
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
