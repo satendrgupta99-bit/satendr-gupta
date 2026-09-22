@@ -33,8 +33,8 @@ export const WorkflowSection: React.FC = () => {
     <section ref={sectionRef} id="workflow" className="py-24 relative overflow-hidden">
       {/* Background cyber accent with parallax */}
       <motion.div
-        style={{ y: glowY }}
-        className="absolute top-1/3 right-10 w-96 h-96 bg-[#00F0FF]/[0.05] rounded-full blur-[140px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY, willChange: 'transform, opacity' }}
+        className="absolute top-1/3 right-10 w-96 h-96 bg-[#00F0FF]/[0.05] rounded-full blur-[140px] pointer-events-none transform-gpu"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">

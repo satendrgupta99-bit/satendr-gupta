@@ -18,26 +18,26 @@ export const ParallaxBackground: React.FC = () => {
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Layer 1: Electric Cyan Glow - Top Left */}
       <motion.div
-        style={{ y: yOrb1, scale: scaleOrb1 }}
-        className="absolute -top-36 -left-36 w-[620px] h-[620px] rounded-full bg-[#00F0FF]/[0.07] blur-[150px] transform-gpu will-change-transform"
+        style={{ y: yOrb1, scale: scaleOrb1, willChange: 'transform, opacity' }}
+        className="absolute -top-36 -left-36 w-[620px] h-[620px] rounded-full bg-[#00F0FF]/[0.07] blur-[150px] transform-gpu"
       />
 
       {/* Layer 2: Deep Cybernetic Purple Glow - Mid Right */}
       <motion.div
-        style={{ y: yOrb2, scale: scaleOrb2 }}
-        className="absolute top-[25vh] -right-44 w-[700px] h-[700px] rounded-full bg-purple-600/[0.08] blur-[170px] transform-gpu will-change-transform"
+        style={{ y: yOrb2, scale: scaleOrb2, willChange: 'transform, opacity' }}
+        className="absolute top-[25vh] -right-44 w-[700px] h-[700px] rounded-full bg-purple-600/[0.08] blur-[170px] transform-gpu"
       />
 
       {/* Layer 3: Vibrant Teal / Emerald Glow - Lower Left */}
       <motion.div
-        style={{ y: yOrb3 }}
-        className="absolute top-[65vh] -left-28 w-[580px] h-[580px] rounded-full bg-[#00F0FF]/[0.05] blur-[150px] transform-gpu will-change-transform"
+        style={{ y: yOrb3, willChange: 'transform, opacity' }}
+        className="absolute top-[65vh] -left-28 w-[580px] h-[580px] rounded-full bg-[#00F0FF]/[0.05] blur-[150px] transform-gpu"
       />
 
       {/* Layer 4: Deep Violet / Indigo Glow - Bottom Right */}
       <motion.div
-        style={{ y: yOrb4 }}
-        className="absolute top-[110vh] right-[5%] w-[640px] h-[640px] rounded-full bg-violet-700/[0.06] blur-[180px] transform-gpu will-change-transform"
+        style={{ y: yOrb4, willChange: 'transform, opacity' }}
+        className="absolute top-[110vh] right-[5%] w-[640px] h-[640px] rounded-full bg-violet-700/[0.06] blur-[180px] transform-gpu"
       />
     </div>
   );

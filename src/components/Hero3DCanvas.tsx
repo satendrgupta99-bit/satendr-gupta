@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Smartphone, Play, Sparkles, RotateCcw } from 'lucide-react';
+import { Smartphone, Play, Sparkles, RotateCcw, Instagram, ExternalLink } from 'lucide-react';
 import { sounds } from '../utils/audio';
 
 export const Hero3DCanvas: React.FC = () => {
@@ -289,13 +289,25 @@ export const Hero3DCanvas: React.FC = () => {
           {/* Screen Area with 9:16 Aspect Masking & Embedded Reel */}
           <div className="w-full h-full rounded-[34px] overflow-hidden bg-black relative flex items-center justify-center shadow-inner">
             <iframe
-              src="https://www.instagram.com/reel/DcuxTecIOQU/embed/"
+              src="https://www.instagram.com/reel/DdlCw6IohlS/embed/"
               title="LNX EDITOR Featured Instagram Reel"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; encrypted-media"
               className="w-full h-full border-0 select-none bg-black"
             />
+            {/* Quick Link Button to View Reel Directly */}
+            <a
+              href="https://www.instagram.com/reel/DdlCw6IohlS/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-3 right-3 z-30 px-2.5 py-1 rounded-full bg-black/85 hover:bg-black text-[10px] font-mono text-white hover:text-[#00F0FF] border border-white/20 hover:border-[#00F0FF]/50 backdrop-blur-md transition-all flex items-center gap-1 shadow-lg pointer-events-auto"
+              title="Open Reel on Instagram"
+            >
+              <Instagram className="w-3 h-3 text-[#00F0FF]" />
+              <span>Open</span>
+              <ExternalLink className="w-2.5 h-2.5 text-zinc-400" />
+            </a>
           </div>
 
           {/* Subtle Glass Glare Reflection */}

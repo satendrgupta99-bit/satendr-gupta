@@ -227,6 +227,7 @@ export const ProjectLightbox: React.FC<ProjectLightboxProps> = ({
                 <iframe
                   src={embedSrc}
                   title={project.title}
+                  loading="lazy"
                   frameBorder="0"
                   scrolling="no"
                   allow="autoplay; encrypted-media"

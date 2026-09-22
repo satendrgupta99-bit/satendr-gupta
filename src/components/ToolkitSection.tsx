@@ -35,12 +35,12 @@ export const ToolkitSection: React.FC = () => {
     <section ref={sectionRef} id="toolkit" className="py-24 relative overflow-hidden bg-[#0A0A0A] border-t border-b border-white/5">
       {/* Background ambient lighting with parallax */}
       <motion.div
-        style={{ y: glowY1 }}
-        className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#00F0FF]/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY1, willChange: 'transform, opacity' }}
+        className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#00F0FF]/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu"
       />
       <motion.div
-        style={{ y: glowY2 }}
-        className="absolute top-1/2 right-1/4 w-[500px] h-[300px] bg-purple-600/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY2, willChange: 'transform, opacity' }}
+        className="absolute top-1/2 right-1/4 w-[500px] h-[300px] bg-purple-600/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">

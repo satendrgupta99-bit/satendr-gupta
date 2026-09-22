@@ -42,12 +42,12 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ onSelectProject }) => 
     <section ref={sectionRef} id="work" className="py-24 relative overflow-hidden bg-[#0A0A0A]">
       {/* Parallax Background glow highlights (moves slower than cards) */}
       <motion.div
-        style={{ y: glowY1 }}
-        className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-[#00F0FF]/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY1, willChange: 'transform, opacity' }}
+        className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-[#00F0FF]/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu"
       />
       <motion.div
-        style={{ y: glowY2 }}
-        className="absolute bottom-10 -right-20 w-[500px] h-[500px] bg-purple-600/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY2, willChange: 'transform, opacity' }}
+        className="absolute bottom-10 -right-20 w-[500px] h-[500px] bg-purple-600/[0.06] rounded-full blur-[140px] pointer-events-none transform-gpu"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">

@@ -96,12 +96,12 @@ export const BeforeAfterSection: React.FC = () => {
 
       {/* Parallax ambient glows */}
       <motion.div
-        style={{ y: glowY1 }}
-        className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-[#00F0FF]/[0.05] rounded-full blur-[150px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY1, willChange: 'transform, opacity' }}
+        className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-[#00F0FF]/[0.05] rounded-full blur-[150px] pointer-events-none transform-gpu"
       />
       <motion.div
-        style={{ y: glowY2 }}
-        className="absolute bottom-10 -left-20 w-[500px] h-[500px] bg-purple-600/[0.05] rounded-full blur-[150px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY2, willChange: 'transform, opacity' }}
+        className="absolute bottom-10 -left-20 w-[500px] h-[500px] bg-purple-600/[0.05] rounded-full blur-[150px] pointer-events-none transform-gpu"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 relative z-10">

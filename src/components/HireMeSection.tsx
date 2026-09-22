@@ -55,12 +55,12 @@ export const HireMeSection: React.FC<HireMeSectionProps> = ({ prefilledProject }
     <section ref={sectionRef} id="hire" className="py-24 relative overflow-hidden bg-[#0A0A0A]">
       {/* Background glow lighting with parallax */}
       <motion.div
-        style={{ y: glowY1 }}
-        className="absolute top-1/3 right-10 w-96 h-96 bg-[#00F0FF]/[0.06] rounded-full blur-[160px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY1, willChange: 'transform, opacity' }}
+        className="absolute top-1/3 right-10 w-96 h-96 bg-[#00F0FF]/[0.06] rounded-full blur-[160px] pointer-events-none transform-gpu"
       />
       <motion.div
-        style={{ y: glowY2 }}
-        className="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/[0.06] rounded-full blur-[160px] pointer-events-none transform-gpu will-change-transform"
+        style={{ y: glowY2, willChange: 'transform, opacity' }}
+        className="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/[0.06] rounded-full blur-[160px] pointer-events-none transform-gpu"
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
